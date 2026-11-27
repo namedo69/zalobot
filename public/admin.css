@@ -1,0 +1,20 @@
+:root { color-scheme: light; font: 16px/1.6 system-ui, sans-serif; color: #182535; background: #f3f5f7; }
+body { margin: 0; }
+main { max-width: 860px; margin: 32px auto; padding: 0 20px 48px; }
+h1 { font-size: 28px; margin-bottom: 8px; }
+h2 { font-size: 20px; margin-top: 0; }
+section { background: white; padding: 24px; margin: 20px 0; border: 1px solid #d9dfe5; }
+label { display: block; font-weight: 600; }
+input { box-sizing: border-box; width: 100%; max-width: 480px; padding: 10px; font: inherit; border: 1px solid #8996a5; margin: 8px 8px 12px 0; }
+button { padding: 10px 14px; font: inherit; cursor: pointer; background: #173d65; color: white; border: 1px solid #173d65; }
+button:disabled { opacity: .55; cursor: wait; }
+button:focus-visible, input:focus-visible { outline: 3px solid #bd6b00; outline-offset: 3px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.warning { border-left: 4px solid #b36b00; padding: 12px; background: #fff4df; }
+#message { overflow-wrap: anywhere; font-weight: 600; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #edf2f7; padding: 16px; }
+#qr { margin: 24px 0; max-width: 100%; height: auto; }
+.device { padding: 16px 0; border-top: 1px solid #d9dfe5; }
+.device p { margin: 0 0 8px; }
+.device button { margin: 0 8px 8px 0; }
+[hidden] { display: none !important; }

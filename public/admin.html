@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OBee · Quản trị bot Zalo</title>
+  <link rel="stylesheet" href="/admin.css">
+  <script type="module" src="/admin.js"></script>
+</head>
+<body>
+<main>
+  <h1>Bot thông báo Zalo</h1>
+  <p>Chỉ gửi cảnh báo chấm công. Không nhập mật khẩu hoặc phiên đăng nhập OBee.</p>
+  <p class="warning">Thư viện Zalo cá nhân không chính thức có thể mất phiên hoặc khiến tài khoản bị hạn chế. Nên dùng tài khoản bot riêng.</p>
+  <form id="login">
+    <label for="token">Khóa quản trị (ADMIN_TOKEN trên Render)</label>
+    <input id="token" type="password" required minlength="32" autocomplete="off">
+    <button>Đăng nhập</button>
+  </form>
+  <p id="message" role="status" aria-live="polite"></p>
+  <div id="panel" hidden>
+    <section>
+      <h2>1. Đăng nhập Zalo</h2>
+      <p id="state"></p>
+      <div class="actions">
+        <button id="qr-start">Tạo QR đăng nhập</button>
+        <button id="reconnect">Kết nối lại phiên đã lưu</button>
+        <button id="logout">Xóa phiên Zalo</button>
+        <button id="refresh">Làm mới trạng thái</button>
+        <button id="lock">Khóa trang quản trị</button>
+      </div>
+      <img id="qr" hidden alt="Mã QR đăng nhập Zalo, chỉ quét bằng tài khoản bot" width="280" height="280">
+      <p>Quét bằng Zalo trên điện thoại và xác nhận đăng nhập. Không mở Zalo Web khác cùng tài khoản khi bot đang chạy.</p>
+    </section>
+    <section>
+      <h2>2. Liên kết người nhận</h2>
+      <form id="invite">
+        <label for="name">Tên người nhận / thiết bị</label>
+        <input id="name" required maxlength="60" placeholder="Ví dụ: Luong - laptop">
+        <button>Tạo mã liên kết</button>
+      </form>
+      <pre id="invite-result" hidden></pre>
+      <p>Mã có hạn 10 phút, dùng một lần. Người nhận nhắn mã trực tiếp cho bot từ Zalo của mình; không gửi vào nhóm. Mỗi người nhận chỉ liên kết một thiết bị đang hoạt động.</p>
+    </section>
+    <section>
+      <h2>3. Gửi thử và quản lý quyền</h2>
+      <div id="devices"></div>
+    </section>
+  </div>
+</main>
+</body>
+</html>
